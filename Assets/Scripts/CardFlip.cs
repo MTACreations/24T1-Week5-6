@@ -5,22 +5,28 @@ using UnityEngine.UI;
 
 public class CardFlip : MonoBehaviour
 {
-    [SerializeField] Animator animator;
+   
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        animator.enabled = false;
+       
     }
 
-    private void OnMouseEnter()
+    
+   /* IEnumerator FlipCards()
     {
-        StartCoroutine(FlipCards());
+      //  animator.enabled = true;
+       // yield return null;
+    }
+   */
+
+    private void FlipCard()
+    {
+        gameObject.transform.Rotate(0,-180,0,Space.Self);
     }
 
-    IEnumerator FlipCards()
+    private void OnMouseDown()
     {
-        animator.enabled = true;
-        yield return null;
+        FlipCard();
     }
 }
