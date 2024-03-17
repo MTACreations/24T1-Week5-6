@@ -21,14 +21,9 @@ public class Timer : MonoBehaviour
         }
     }
 
-    public void AddTime(int extraTime)
+    public void ChangeTime(int extraTime)
     {
         time = time + extraTime;
-    }
-
-    public void LoseTime(int penaltyTime)
-    {
-        time = time - penaltyTime;
     }
 
     public void Countdown(float timeLeft)

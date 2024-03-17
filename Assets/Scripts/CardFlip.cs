@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CardFlip : MonoBehaviour
 {
-   
+    public Timer timer;
 
     private void Start()
     {
@@ -23,6 +23,12 @@ public class CardFlip : MonoBehaviour
     private void FlipCard()
     {
         gameObject.transform.Rotate(0,-180,0,Space.Self);
+
+        if(gameObject.tag == "Time Card")
+        {
+            timer.ChangeTime(15);
+            Destroy(gameObject);
+        }
     }
 
     private void OnMouseDown()
